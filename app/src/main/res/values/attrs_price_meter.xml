@@ -1,0 +1,7 @@
+<resources>
+    <declare-styleable name="PriceMeter">
+        <attr name="priceValue" format="float" />
+        <attr name="priceHeight" format="integer" />
+        <attr name="priceColor" format="color" />
+    </declare-styleable>
+</resources>
