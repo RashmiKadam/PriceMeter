@@ -14,7 +14,6 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_rect_filled"
         android:gravity="center"
-        android:text="2.87"
         android:textAppearance="@style/PriceMeterText"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +57,8 @@
         app:layout_constraintStart_toEndOf="@id/priceTextValue"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
+
+    <Button
         android:id="@+id/oneCent"
         android:layout_width="60dp"
         android:layout_height="50dp"
@@ -67,14 +67,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="144dp"
         android:background="@drawable/radio_bg"
-        android:text="1¢"
-        android:textColor="@android:color/white"
+        android:text="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fiveCent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceTextValue" />
 
-    <RadioButton
+    <Button
         android:id="@+id/fiveCent"
         android:layout_width="60dp"
         android:layout_height="50dp"
@@ -83,13 +82,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="144dp"
         android:background="@drawable/radio_bg"
-        android:text="5¢"
+        android:text="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tfCent"
         app:layout_constraintStart_toEndOf="@+id/oneCent"
         app:layout_constraintTop_toBottomOf="@+id/priceTextValue" />
 
-    <RadioButton
+    <Button
         android:id="@+id/tfCent"
         android:layout_width="60dp"
         android:layout_height="50dp"
@@ -98,13 +97,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="144dp"
         android:background="@drawable/radio_bg"
-        android:text="25¢"
+        android:text="25"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/oneDollar"
         app:layout_constraintStart_toEndOf="@+id/fiveCent"
         app:layout_constraintTop_toBottomOf="@+id/priceTextValue" />
 
-    <RadioButton
+    <Button
         android:id="@+id/oneDollar"
         android:layout_width="60dp"
         android:layout_height="50dp"
@@ -113,13 +112,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="144dp"
         android:background="@drawable/radio_bg"
-        android:text="1$"
+        android:text="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fiveDollar"
         app:layout_constraintStart_toEndOf="@+id/tfCent"
         app:layout_constraintTop_toBottomOf="@+id/priceTextValue" />
 
-    <RadioButton
+    <Button
         android:id="@+id/fiveDollar"
         android:layout_width="60dp"
         android:layout_height="50dp"
@@ -128,7 +127,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="144dp"
         android:background="@drawable/radio_bg"
-        android:text="$5"
+        android:text="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/oneDollar"
