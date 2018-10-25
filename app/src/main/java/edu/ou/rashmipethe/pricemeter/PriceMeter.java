@@ -40,9 +40,9 @@ public class PriceMeter extends ConstraintLayout {
     Button oneDollarBtn = null;
     Button fiveDollarBtn = null;
 
-    private float oneCentValue = 0;
-    private float fiveCentValue = 0;
-    private float tfCentValue = 0;
+    private int oneCentValue = 0;
+    private int fiveCentValue = 0;
+    private int tfCentValue = 0;
     private float oneDollarValue = 0;
     private float fiveDollarValue = 0;
     private NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
@@ -86,19 +86,35 @@ public class PriceMeter extends ConstraintLayout {
         //Find the components within container
         priceText = container.findViewById(R.id.priceTextValue);
         priceMeter = Float.parseFloat(getPriceValue());
-        priceText.setText(getPriceValue());
+        priceText.setText(currencyFormat.format(priceMeter));
         plusBtn = container.findViewById(R.id.plusButton);
         minusBtn = container.findViewById(R.id.minusButton);
+
+        //Do not display fraction part only for Price change buttons. So, taken new currency format instance
+        NumberFormat priceChangeFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        priceChangeFormat.setMinimumFractionDigits(0);
+        //Cent symbol for the cent buttons
+        String centSymbol = getResources().getString(R.string.cent_symbol);
+
         oneCentBtn = container.findViewById(R.id.oneCent);
-        oneCentValue = Float.parseFloat(oneCentBtn.getText().toString());
+        oneCentValue = Integer.parseInt(oneCentBtn.getText().toString());
+        oneCentBtn.setText(String.valueOf(oneCentValue).concat(centSymbol));
+
         fiveCentBtn = container.findViewById(R.id.fiveCent);
-        fiveCentValue = Float.parseFloat(fiveCentBtn.getText().toString());
+        fiveCentValue = Integer.parseInt(fiveCentBtn.getText().toString());
+        fiveCentBtn.setText(String.valueOf(fiveCentValue).concat(centSymbol));
+
         tfCentBtn = container.findViewById(R.id.tfCent);
-        tfCentValue = Float.parseFloat(tfCentBtn.getText().toString());
+        tfCentValue = Integer.parseInt(tfCentBtn.getText().toString());
+        tfCentBtn.setText(String.valueOf(tfCentValue).concat(centSymbol));
+
         oneDollarBtn = container.findViewById(R.id.oneDollar);
         oneDollarValue = Float.parseFloat(oneDollarBtn.getText().toString());
+        oneDollarBtn.setText(priceChangeFormat.format(oneDollarValue));
+
         fiveDollarBtn = container.findViewById(R.id.fiveDollar);
         fiveDollarValue = Float.parseFloat(fiveDollarBtn.getText().toString());
+        fiveDollarBtn.setText(priceChangeFormat.format(fiveDollarValue));
 
         //Set default priceChnage value to 0.01f
         oneCentBtn.setPressed(true);

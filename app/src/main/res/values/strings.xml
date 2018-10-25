@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PriceMeter</string>
+    <string name="cent_symbol">&#x00A2;</string>
 </resources>
